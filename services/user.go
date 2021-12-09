@@ -8,7 +8,7 @@ import (
 )
 
 type UserServiceServer interface {
-	AddUser(context.Context, *User) (*User, error)
+	AddUser(context.Context, *pb.User) (*pb.User, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
