@@ -4,12 +4,14 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/thompsonmss/grpc-go/pb"
 	"github.com/thompsonmss/grpc-go/pb/pb"
 )
 
 type UserServiceServer interface {
 	AddUser(context.Context, *pb.User) (*pb.User, error)
 	mustEmbedUnimplementedUserServiceServer()
+	// AddUserVerbose(ctx context.Context, in *User, opts ...grpc.CallOption) (UserService_AddUserVerboseClient, error)
 }
 
 type UserService struct {
@@ -30,3 +32,5 @@ func (*UserService) AddUser(ctx context.Context, req *pb.User) (*pb.User, error)
 		Email: req.GetEmail(),
 	}, nil
 }
+
+func (*UserService) AddUserVerbose(req *pb.User, stream pb.UserService_AddUserVerboseServer)
