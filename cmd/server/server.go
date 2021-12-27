@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/thompsonmss/grpc-go/pb/pb"
+	"github.com/thompsonmss/grpc-go/pb"
 	"github.com/thompsonmss/grpc-go/services"
 	"google.golang.org/grpc"
 )
