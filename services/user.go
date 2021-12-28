@@ -12,6 +12,7 @@ import (
 type UserServiceServer interface {
 	AddUser(context.Context, *pb.User) (*pb.User, error)
 	mustEmbedUnimplementedUserServiceServer()
+	// AddUserVerbose(ctx context.Context, in *User, opts ...grpc.CallOption) (UserService_AddUserVerboseClient, error)
 }
 
 type UserService struct {
@@ -33,6 +34,7 @@ func (*UserService) AddUser(ctx context.Context, req *pb.User) (*pb.User, error)
 	}, nil
 }
 
+<<<<<<< HEAD
 func (*UserService) addUserVerbose(req *pb.User, stream pb.UserService_AddUserVerboseServer) error {
 
 	stream.Send(&pb.UserResultStream{
@@ -74,3 +76,6 @@ func (*UserService) addUserVerbose(req *pb.User, stream pb.UserService_AddUserVe
 	return nil
 
 }
+=======
+func (*UserService) AddUserVerbose(req *pb.User, stream pb.UserService_AddUserVerboseServer)
+>>>>>>> ff5b3d490d8b80cb4de1adfdc5b23f0726d714d2
